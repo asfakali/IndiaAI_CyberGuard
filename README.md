@@ -134,13 +134,21 @@ python train_models.py --train_path ./train.csv --test_path ./test.csv --models 
 - Logistic Regression
 - Decision Tree
 - Random Forest
-- SVM
-- KNN
+- SVM (Support Vector Machine)
+- KNN (K-Nearest Neighbors)
+- AdaBoost
+- Bagging
+- Extra Trees
 - LightGBM
-- AdaBoost, and more.
+- Passive Aggressive Classifier
+- Perceptron
+- SGD Classifier
+- Stacking Classifier
+- Voting Classifier (Hard and Soft)
 
-#### Deep Learning
-- Pre-trained transformers: `bert-base-uncased`, `gpt2`, `google/mobilebert-uncased`, etc.
+
+#### Supported Deep Learning
+- Pre-trained transformers: `google/electra-small-discriminator`, `squeezebert/squeezebert-uncased`, `huawei-noah/TinyBERT_General_4L_312D`, `microsoft/MiniLM-L12-H384-uncased`, `bert-base-uncased`, `gpt2`, `google/bigbird-roberta-base`, `xlnet-base-cased`, `google/mobilebert-uncased`.
 
 ---
 
