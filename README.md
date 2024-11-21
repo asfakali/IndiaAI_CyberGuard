@@ -50,13 +50,13 @@ This will clean the data, process categories and subcategories, and save the res
 To clean validation data separately, run the `val_clean.py` script:
 
 ```bash
-python val_clean.py --input_val <path_to_val_csv> --output_dir <output_directory>
+python val_data_cleaning.py --input_val <path_to_val_csv> --output_dir <output_directory>
 ```
 
 **Example:**
 
 ```bash
-python val_clean.py --input_val val.csv --output_dir ./processed_data
+python val_data_cleaning.py --input_val val.csv --output_dir ./processed_data
 ```
 
 This will clean the validation data and save the cleaned dataset in the specified output directory.
@@ -66,6 +66,10 @@ This will clean the validation data and save the cleaned dataset in the specifie
 ```
 /IndiaAI_CyberGuard
   ├── /processed_data           # Folder where cleaned CSV files are saved
+  ├── /model_file
+      ├── /ml_models
+      ├── /dl_model
+      ├── /vectorizer
   ├── data_cleaning.py          # Script for cleaning train and test data
   ├── val_clean.py              # Script for cleaning validation data
   ├── README.md                 # This file
