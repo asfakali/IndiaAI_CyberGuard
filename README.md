@@ -1,6 +1,5 @@
-Here's the improved README file in Markdown format:
 
-```markdown
+
 # IndiaAI_CyberGuard
 
 ## Data Cleaning and Processing Script
@@ -76,6 +75,4 @@ This will clean the validation data and save the cleaned dataset in the specifie
 ## License
 
 This repository is licensed under the MIT License. See the `LICENSE` file for more information.
-```
 
-This version improves readability, structure, and clarity, ensuring users can easily understand and use the scripts.
