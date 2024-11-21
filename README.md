@@ -22,3 +22,7 @@ Install the required libraries using:
 
 ```bash
 pip install pandas numpy
+
+```bash
+python data_cleaning.py --input_train ./train.csv --input_test ./test.csv --output_dir ./processed_data
+
