@@ -111,7 +111,7 @@ python train_models.py --train_path <path_to_train_csv> --test_path <path_to_tes
 Example:
 
 ```bash
-python train_models.py --train_path ./train.csv --test_path ./test.csv --models Logistic\ Regression SVM --vectorizer tfidf --output_dir ./models
+python train_models.py --train_path ./train.csv --test_path ./test.csv --models Logistic\ Regression SVM --vectorizer tfidf --output_dir ./models_dir
 ```
 
 #### Customization Options
