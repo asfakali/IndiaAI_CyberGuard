@@ -64,7 +64,7 @@ python data_cleaning.py --input_train <path_to_train_csv> --input_test <path_to_
 Example:
 
 ```bash
-python train.py --input_train ./train.csv --input_test ./test.csv --output_dir ./processed_data
+python data_cleaning.py --input_train ./train.csv --input_test ./test.csv --output_dir ./processed_data
 ```
 
 #### Validation Data Cleaning
@@ -102,16 +102,16 @@ python val_data_cleaning.py --input_val ./val.csv --output_dir ./processed_data
 
 ### Usage
 
-Train models using `train_models.py`:
+Train models using `train.py`:
 
 ```bash
-python train_models.py --train_path <path_to_train_csv> --test_path <path_to_test_csv> --models <model1> <model2> ... --vectorizer <vectorizer_type> --output_dir <output_directory>
+python train.py --train_path <path_to_train_csv> --test_path <path_to_test_csv> --models <model1> <model2> ... --vectorizer <vectorizer_type> --output_dir <output_directory>
 ```
 
 Example:
 
 ```bash
-python train_models.py --train_path ./train.csv --test_path ./test.csv --models Logistic\ Regression SVM --vectorizer tfidf --output_dir ./models_dir
+python train.py --train_path ./train.csv --test_path ./test.csv --models Logistic\ Regression SVM --vectorizer tfidf --output_dir ./models_dir
 ```
 
 #### Customization Options
