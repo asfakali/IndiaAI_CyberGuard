@@ -157,3 +157,56 @@ python train.py --train_path ./train.csv --test_path ./test.csv --models Logisti
 - Logs Accuracy, Precision, Recall, and F1 Score during training.
 - Saves best models in the specified `output_dir` based on validation loss.
 
+
+Here’s a README file for your script:
+
+---
+
+# Text Classification Pipline
+
+## Usage
+
+### Command-line Arguments
+The script takes the following arguments:
+
+| Argument           | Required | Description                                                                                   |
+|---------------------|----------|-----------------------------------------------------------------------------------------------|
+| `--model_type`      | Yes      | Type of model to use: `ml` or `dl`.                                                           |
+| `--model_name`      | Yes      | Name of the DL model (e.g., `google/mobilebert-uncased`).                                      |
+| `--model_path`      | Yes      | Path to the saved model file.                                                                 |
+| `--vectorizer_path` | No       | Path to the vectorizer file (required for ML models).                                         |
+| `--max_len`         | No       | Max sequence length for DL models. Default is `128`.                                          |
+| `--categorical`     | Yes      | Type of prediction: `categorical` for main categories or `subcategorical` for subcategories.  |
+
+### Example Commands
+#### Predict using a deep learning model:
+```bash
+python pipline.py --model_type dl --model_name google/mobilebert-uncased --model_path model.pt --categorical categorical
+```
+
+#### Predict using a machine learning model:
+```bash
+python script.py --model_type ml --model_path ml_model.pkl --vectorizer_path vectorizer.pkl --categorical subcategorical
+```
+
+### Running the Script
+1. Start the script with the appropriate arguments.
+2. Input text for prediction when prompted.
+3. Type `Exit` to close the script.
+
+### Sample Session
+```bash
+$ python script.py --model_type dl --model_name google/mobilebert-uncased --model_path model.pt --categorical categorical
+Type 'Exit' to quit the program.
+
+Enter text for prediction: Cybercrime involving financial fraud
+Prediction Category: Online Financial Fraud
+
+Enter text for prediction: Social media account hacking
+Prediction Category: Online and Social Media Related Crime
+
+Enter text for prediction: Exit
+Exiting the program. Goodbye!
+```
+
+
