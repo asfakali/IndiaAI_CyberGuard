@@ -27,8 +27,8 @@ The **IndiaAI_CyberGuard** repository provides tools for data preprocessing and 
    - [Usage](#usage-1)
    - [Supported Models](#supported-models)
    - [Metrics and Model Saving](#metrics-and-model-saving)
-3. [License](#license)
-
+3. [Text Classification Pipline](#text-classification-pipline)
+   - [Usage](#usage-2)
 ---
 
 ## Data Cleaning and Processing
