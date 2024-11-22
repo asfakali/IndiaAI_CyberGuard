@@ -69,16 +69,16 @@ python data_cleaning.py --input_train ./train.csv --input_test ./test.csv --outp
 
 #### Validation Data Cleaning
 
-Use `val_clean.py` to process validation data:
+Use `val_data_cleaning.py` to process validation data:
 
 ```bash
-python val_clean.py --input_val <path_to_val_csv> --output_dir <output_directory>
+python val_data_cleaning.py --input_val <path_to_val_csv> --output_dir <output_directory>
 ```
 
 Example:
 
 ```bash
-python val_clean.py --input_val ./val.csv --output_dir ./processed_data
+python val_data_cleaning.py --input_val ./val.csv --output_dir ./processed_data
 ```
 
 ### Example Directory Structure
