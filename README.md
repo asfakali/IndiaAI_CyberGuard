@@ -130,7 +130,7 @@ python train_models.py --train_path ./train.csv --test_path ./test.csv --models 
 
 ### Supported Models
 
-#### Machine Learning
+#### Machine Learning Models
 - Logistic Regression
 - Decision Tree
 - Random Forest
@@ -147,7 +147,7 @@ python train_models.py --train_path ./train.csv --test_path ./test.csv --models 
 - Voting Classifier (Hard and Soft)
 
 
-#### Supported Deep Learning
+#### Supported Deep Learning Models
 - Pre-trained transformers: `google/electra-small-discriminator`, `squeezebert/squeezebert-uncased`, `huawei-noah/TinyBERT_General_4L_312D`, `microsoft/MiniLM-L12-H384-uncased`, `bert-base-uncased`, `gpt2`, `google/bigbird-roberta-base`, `xlnet-base-cased`, `google/mobilebert-uncased`.
 
 ---
