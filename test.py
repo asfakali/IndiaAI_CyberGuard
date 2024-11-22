@@ -20,7 +20,7 @@ import re
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 from transformers import logging
 logging.set_verbosity_error()
-
+import json
 
 
 # Define DL Models
@@ -62,6 +62,24 @@ class CrimeDataset(Dataset):
             'attention_mask': encoding['attention_mask'].squeeze(0),
             'label': torch.tensor(label, dtype=torch.long)
         }
+
+
+# Save to a JSON file
+def save_metrics_to_json(metrics, file_path):
+    """
+    Save metrics dictionary to a JSON file.
+
+    Args:
+    - metrics (dict): Dictionary containing metrics.
+    - file_path (str): Path to save the JSON file.
+    """
+    try:
+        with open(file_path, 'w') as json_file:
+            json.dump(metrics, json_file, indent=4)
+        print(f"Metrics saved to {file_path}")
+    except Exception as e:
+        print(f"Error saving metrics to JSON: {e}")
+
 
 # Save Metrics and Visualizations
 def save_cm_as_png(y_true, y_pred, cm_filename):
@@ -175,7 +193,9 @@ def main(test_csv, ml_model_paths, dl_model_paths, vectorizer_path, max_len, bat
     # Test ML Models
     for model_path in ml_model_paths:
         cm_filename = os.path.join(save_dir, f"{os.path.basename(model_path)}_cm.png")
-        test_ml_model(model_path, vectorizer_path, test_df, cm_filename)
+        metrics = test_ml_model(model_path, vectorizer_path, test_df, cm_filename)
+        save_metrics_to_json(metrics, f"{model_name}_metrics.json")
+        
 
     # Test DL Models
     for model_name, model_path in dl_model_paths.items():
@@ -187,7 +207,8 @@ def main(test_csv, ml_model_paths, dl_model_paths, vectorizer_path, max_len, bat
             max_len
         )
         cm_filename = os.path.join(save_dir, f"{model_name}_cm.png")
-        test_dl_model(model_name, model_path, test_dataset, batch_size, cm_filename)
+        metrics = test_dl_model(model_name, model_path, test_dataset, batch_size, cm_filename)
+        save_metrics_to_json(metrics, f"{model_name}_metrics.json")
 
 if __name__ == "__main__":
     import argparse
