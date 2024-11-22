@@ -244,7 +244,7 @@ Run the script using the following arguments:
 ```bash
 python main.py \
   --test_csv data/test.csv \
-  --ml_model_paths models/ml_model_1.joblib models/ml_model_2.joblib \
+  --ml_model_paths models/ml_model_1.pkl models/ml_model_2.pkl \
   --dl_model_paths BERT:models/bert_model.pth XLNet:models/xlnet_model.pth \
   --vectorizer_path models/vectorizer.joblib \
   --save_dir results/ \
@@ -266,36 +266,14 @@ The test CSV should have the following columns:
 
 2. **Visualizations**:
    - Confusion Matrix: Saved as PNG files in the specified save directory.
-   - ROC Curve (for binary classification).
 
 ### Example Outputs
 - `results/bert_model_cm.png`: Confusion matrix for the BERT model.
 - `results/ml_model_1_metrics.json`: Metrics for an ML model.
 
-## Extending the Framework
-
-1. **Add New Models**:
-   - Update `DL_MODELS` in the script with the Hugging Face model name.
-   
-2. **Custom Metrics**:
-   - Add new metric calculations in `metrics.py`.
-
-3. **Visualization Enhancements**:
-   - Extend `save_cm_as_png` or `save_auc_as_png` functions for more plots.
-
-## Troubleshooting
-
 - Ensure `test_csv` matches the expected format.
-- Check model paths and ensure correct formats (e.g., `.joblib` for ML, `.pth` for DL).
+- Check model paths and ensure correct formats (e.g., `.pkl` for ML, `.pth` for DL).
 - Verify that required transformers and tokenizers are downloaded.
-
-## Contributing
-
-Contributions are welcome! Feel free to fork the repository and submit pull requests for bug fixes or feature additions.
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
 
 ---
 
