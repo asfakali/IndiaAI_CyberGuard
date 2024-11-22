@@ -11,6 +11,7 @@ import sys
 import warnings
 warnings.filterwarnings('ignore')
 import os
+import re
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 from transformers import logging
 logging.set_verbosity_error()
@@ -105,11 +106,31 @@ class CrimeDataset(torch.utils.data.Dataset):
             'attention_mask': encoding['attention_mask'].squeeze(0)
         }
 
+
+def clean_text(text):
+    # Remove numbers
+    text = re.sub(r'\d+', '', text)
+    
+    # Convert to lowercase
+    text = text.lower()
+    
+    # Remove URLs
+    text = re.sub(r'http[s]?://\S+', '', text)
+    
+    # Remove punctuation
+    text = re.sub(r'[^\w\s]', '', text)
+    
+    # Remove extra whitespaces
+    text = " ".join(text.split())
+    
+    return text
+    
+    
 # Prediction for individual data
 def predict_ml(model_path, vectorizer_path, text):
     model = joblib.load(model_path)
     vectorizer = joblib.load(vectorizer_path)
-    vectorized_text = vectorizer.transform([text])
+    vectorized_text = vectorizer.transform([clean_text(text)])
     prediction = model.predict(vectorized_text)
     return prediction[0]
 
@@ -124,7 +145,7 @@ def predict_dl(model_name, model_path, text, max_len, num_labels=2):
     
     model.eval()
 
-    dataset = CrimeDataset([text], tokenizer, max_len)
+    dataset = CrimeDataset([clean_text(text)], tokenizer, max_len)
     dataloader = DataLoader(dataset, batch_size=1, shuffle=False)
 
     with torch.no_grad():
