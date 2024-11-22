@@ -64,7 +64,7 @@ python data_cleaning.py --input_train <path_to_train_csv> --input_test <path_to_
 Example:
 
 ```bash
-python data_cleaning.py --input_train ./train.csv --input_test ./test.csv --output_dir ./processed_data
+python train.py --input_train ./train.csv --input_test ./test.csv --output_dir ./processed_data
 ```
 
 #### Validation Data Cleaning
