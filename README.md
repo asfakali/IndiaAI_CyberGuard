@@ -43,12 +43,12 @@ The **IndiaAI_CyberGuard** repository provides tools for data preprocessing and 
 ### Requirements
 
 - Python 3.7 or higher
-- Libraries: `pandas`, `numpy`
+- Libraries: `pandas`, `numpy`, `Pandas`, `NumPy`, `Scikit-learn`, `PyTorch`, `Transformers` (Hugging Face), `Matplotlib`, `Seaborn`, `TQDM`, `Joblib`, `json`
 
 Install required libraries:
 
 ```bash
-pip install -r 
+pip install -r requirements.txt
 ```
 
 ### Usage
